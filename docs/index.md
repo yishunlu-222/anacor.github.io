@@ -8,7 +8,7 @@ This command is used to create the initialization for the AnACor. This creates t
 ```
 
 ## anacor.preprocess
-![anacor.preprocess.jpg]([https://someurl/imagelocation/image.png](https://github.com/yishunlu-222/anacor.github.io/blob/main/docs/anacor.preprocess.jpg))
+![anacor.preprocess.jpg](https://github.com/yishunlu-222/anacor.github.io/blob/main/docs/anacor.preprocess.jpg)
 This command is used to create 3D model, calculate absorption coefficient and preprocess data from dials (.expt and .refl).  To execute `anacor.preprocess` , the user can either change the flags/parameters in `default_preprocess_input.yaml`  or create a new one .yaml file, where the user needs to source the path like below:
 
 ```anacor.preprocess --input-file "input flag file path" ```
