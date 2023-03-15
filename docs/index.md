@@ -1,3 +1,4 @@
+![Flow chart](https://github.com/yishunlu-222/anacor.github.io/blob/main/docs/whole%20process.jpg)
 ## anacor.init
 This command is used to create the initialization for the AnACor. This creates the following three default input files for the user to enter commands/flags to the commands. They contain the possible flags for the anacor.preprocess, anacor.mp and anacor.postprocess. The users can use this template to create a new input files for the commands.
 ```markdown
