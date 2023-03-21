@@ -46,7 +46,7 @@ This command is used to create 3D model, calculate absorption coefficient and pr
         default = True ,
         help = "whether the reconstruction slices need to be vertically filpped to match that in the real experiment" ,
         
-		"--cal_coefficient-calculation" ,
+	"--cal-coefficient" ,
         type = bool ,
         default = False ,
         help = "whether need to calculate coefficients" 
@@ -61,12 +61,12 @@ This command is used to create 3D model, calculate absorption coefficient and pr
         default = True ,
         help = "whether automatically calculating the largest area of the flat-field image to calculate absorption coefficient "
 	    
-	    "--coefficient-orientation" ,
+	"--coefficient-orientation" ,
         type = int ,
         default = 0 ,
         help = "the orientation offset of the flat-field image to match the 3D model in degree. normally this is 0 degree" ,
 	    
-	    "--coefficient-viewing" ,
+	"--coefficient-viewing" ,
         type = int ,
         default = 0 ,
         help = "the viewing angle of the 3D model to have the best region to determine absorption coefficient in degree" ,
