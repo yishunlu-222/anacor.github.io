@@ -205,7 +205,9 @@ This command is used to calculate the absoprtion factors across different nodes 
         "--post-process" ,
          type = bool ,
          default = False ,
-         help = "doing the post process in the cluster after the calculation" ,
+         help = "doing the post process in the cluster after the calculation,
+	 if you set this true, after the calculation is finished, you can go to
+	 the directory ./ResultData/dials_output/*.log to check the results" ,
         
         "--offset" ,
         type = float ,
