@@ -147,139 +147,136 @@ This command is used to calculate the absoprtion factors across different nodes 
 ```anacor.mp --input-file "input flag file path" ```
 
 ### Parameters/Flags in the .yaml file
-		"--dataset" ,
-         type = str ,
-         help = "dataset reference number/name " ,
-         
-        "--store-dir" ,
-         type = str ,
-         default = "./" ,
-         help = "the store directory " ,
-           
-		 "--refl-filename" ,  
-	    type = str ,  
-	    help = "the path of the reflection table" , 
-	    
-		"--expt-filename" ,
-        type = str ,
-        help = "the path of the experimental file" ,
-        
-        "--dials-dependancy" ,
-        type = str ,
-        help = "the path to execute dials package"
-               "e.g. module load dials"
-               "e.g. source /home/yishun/dials_develop_version/dials" ,
-        
-        "--model-storepath" ,
-        type = str ,
-        default = None ,
-        help = "the storepath of the 3D model built by other sources in .npy" ,
-        
-        "--hpc-dependancies" , nargs = '*' , type = str ,  
-                     help = "List of hpc_dependancies to execute, they can be entered at the same time e.g. 'module load dials' 'module load global/cluster' " 
-                     
-         "--num-cores" ,
-        type = int ,
-        default = 20 ,
-        help = "the number of cores to be distributed" ,
-        
-        "--hour" ,
-        type = int ,
-        default = 3 ,
-        help = "cluster request time: hour" ,
-        
-        "--minute" ,
-        type = int ,
-        default = 10 ,
-        help = "cluster request time: minute" ,
-        
-        "--second" ,
-        type = int ,
-        default = 10 ,
-        help = "cluster request time: second" ,
-        
-        "--crac" ,
-        type = float , required = True ,
-        help = "the absorption coefficient of the crystal and it is needed" ,
-   
-        "--loac" ,
-        type = float , required = True ,
-        help = "the absorption coefficient of the loop and it is needed" ,
-    
-        "--liac" ,
-        type = float , required = True ,
-        help = "the absorption coefficient of the liquor and it is needed" ,
-    
-        "--buac" ,
-        type = float , default = 0 ,
-        help = "the absorption coefficient of the bubble and it is not necessarily needed" ,
-        
-        "--sampling" ,
-         type = int ,
-         default = 5000 ,
-         help = "sampling for picking crystal point to calculate" ,
-        
-        "--post-process" ,
-         type = bool ,
-         default = False ,
-         help = "doing the post process in the cluster after the calculation,
-	 if you set this true, after the calculation is finished, you can go to
-	 the directory ./ResultData/dials_output/*.log to check the results" ,
-        
-        "--offset" ,
-        type = float ,
-        default = 0 ,
-        help = "the orientation offset" ,
+	"--dataset" ,
+	type = str ,
+	help = "dataset reference number/name " ,
+	
+	"--store-dir" ,
+	type = str ,
+	default = "./" ,
+	help = "the store directory " ,
+	
+	"--refl-filename" ,  
+	type = str ,  
+	help = "the path of the reflection table" , 
+	
+	"--expt-filename" ,
+	type = str ,
+	help = "the path of the experimental file" ,
+	
+	"--dials-dependancy" ,
+	type = str ,
+	help = "the path to execute dials package"
+	"e.g. module load dials"
+	"e.g. source /home/yishun/dials_develop_version/dials" ,
+	
+	"--model-storepath" ,
+	type = str ,
+	default = None ,
+	help = "the storepath of the 3D model built by other sources in .npy" ,
+	
+	"--hpc-dependancies" , nargs = '*' , type = str ,  
+	help = "List of hpc_dependancies to execute, they can be entered at the same time e.g. 'module load dials' 'module load global/cluster' " 
+	
+	"--num-cores" ,
+	type = int ,
+	default = 20 ,
+	help = "the number of cores to be distributed" ,
+	
+	"--hour" ,
+	type = int ,
+	default = 3 ,
+	help = "cluster request time: hour" ,
+	
+	"--minute" ,
+	type = int ,
+	default = 10 ,
+	help = "cluster request time: minute" ,
+	
+	"--second" ,
+	type = int ,
+	default = 10 ,
+	help = "cluster request time: second" ,
+	
+	"--crac" ,
+	type = float , required = True ,
+	help = "the absorption coefficient of the crystal and it is needed" ,
+	
+	"--loac" ,
+	type = float , required = True ,
+	help = "the absorption coefficient of the loop and it is needed" ,
+	
+	"--liac" ,
+	type = float , required = True ,
+	help = "the absorption coefficient of the liquor and it is needed" ,
+	
+	"--buac" ,
+	type = float , default = 0 ,
+	help = "the absorption coefficient of the bubble and it is not necessarily needed" ,
+	
+	"--sampling-num" ,
+	type = int ,
+	default = 5000 ,
+	help = "sampling numbers for picking crystal point to calculate" ,
+	
+	"--post-process" ,
+	type = bool ,
+	default = False ,
+	help = "doing the post process in the cluster after the calculation" ,
+	
+	"--offset" ,
+	type = float ,
+	default = 0 ,
+	help = "the orientation offset" ,
 	
 	"--auto-sampling" ,
-        type = bool ,
-        default =True,
-        help = "automatically determine sampling number",
-        
-        "--full-iteration",
-        type=int,
-        default=0,
-        help="whether to do full iteration(break when encounter an air point)",
-        
-		"--pixel-size-x",
-        type=float,
-        default=0.3,
-        help="overall pixel size of tomography in x dimension",
-       
-       "--pixel-size-y",
-        type=float,
-        default=0.3,
-        help="overall pixel size of tomography in y dimension",
-        
-       "--pixel-size-z",
-        type=float,
-        default=0.3,
-        help="overall pixel size of tomography in z dimension
-		
-       "--by-c",
-        type=str2bool,
-        default=True,
-        help="calculate by c instead of python",
-        
-        "--slicing",
-        type=str,
-        default='z',
-        help="slicing sampling direction",
-        
-         "--num-workers",
-        type=int,
-        default=4,
-        help="number of workers",
-        
-        "--test-mode",
-        type=str2bool,
-        default=False,
-        help="test mode",
-
-        "--bisection" ,
-        type = str2bool,
-        default = True ,
-        help = "activate bisection method" ,
+	type = bool ,
+	default =True,
+	help = "automatically determine sampling number",
+	
+	"--pixel-size-x",
+	type=float,
+	default=0.3,
+	help="overall pixel size of tomography in x dimension",
+	
+	"--pixel-size-y",
+	type=float,
+	default=0.3,
+	help="overall pixel size of tomography in y dimension",
+	
+	"--pixel-size-z",
+	type=float,
+	default=0.3,
+	help="overall pixel size of tomography in z dimension
+	
+	"--by-c",
+	type=str2bool,
+	default=True,
+	help="calculate by c instead of python",
+	
+	"--slicing",
+	type=str,
+	default='z',
+	help="slicing sampling direction",
+	
+	"--num-workers",
+	type=int,
+	default=4,
+	help="number of workers",
+	
+	"--test-mode",
+	type=str2bool,
+	default=False,
+	help="test mode",
+	
+	"--bisection" ,
+	type = str2bool,
+	default = True ,
+	help = "activate bisection method" ,
+	"--full-iteration",
+	type=int,
+	default=0,
+	help="whether to do full iterationbreak when encounter an air point",
 
 
 ### Example results on the store directory
