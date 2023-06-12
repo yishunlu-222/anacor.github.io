@@ -19,7 +19,7 @@ This command is used to create 3D model, calculate absorption coefficient and pr
 	type = str ,
 	help = "dataset reference number/name " ,
 	
-        "--store-dir" ,
+	"--store-dir" ,
 	type = str ,
 	default = "./" ,
 	help = "the store directory " ,
@@ -27,97 +27,97 @@ This command is used to create 3D model, calculate absorption coefficient and pr
 	"--segimg-path" ,
 	type = str ,
 	help = "the path of segmentation images" ,
-         
+	
 	"--rawimg-path" ,
 	type = str ,
 	default = None ,
 	help = "the path of raw flat-field images" ,
-		 
+	
 	"--refl-filename" ,  
 	type = str ,  
 	help = "the path of the reflection table" , 
-	    
+	
 	"--expt-filename" ,
-        type = str ,
-        help = "the path of the experimental file" ,
-        
-	"--create3D" ,	
-        type = bool ,
-        default = True ,
-        help = "whether the reconstruction slices need to be vertically filpped to match that in the real experiment" ,
-        
-	"--cal-coefficient" ,
-        type = bool ,
-        default = False ,
-        help = "whether need to calculate coefficients" 
-        
-        "--coefficient-auto-orientation" ,
-        type = bool ,
-        default = True ,
-        help = "whether automatically match the orientation of 3D model with the flat-field image to calculate absorption coefficient "
-        
-        "--coefficient-auto-viewing" ,
-        type = bool ,
-        default = True ,
-        help = "whether automatically calculating the largest area of the flat-field image to calculate absorption coefficient "
-	    
+	type = str ,
+	help = "the path of the experimental file" ,
+	
+	"--create3D" ,
+	type = bool ,
+	default = True ,
+	help = "whether the reconstruction slices need to be vertically filpped to match that in the real experiment" ,
+	
+	"--cal_coefficient" ,
+	type = bool ,
+	default = False ,
+	help = "whether need to calculate coefficients" 
+	
+	"--coefficient-auto-orientation" ,
+	type = bool ,
+	default = True ,
+	help = "whether automatically match the orientation of 3D model with the flat-field image to calculate absorption coefficient "
+	
+	"--coefficient-auto-viewing" ,
+	type = bool ,
+	default = True ,
+	help = "whether automatically calculating the largest area of the flat-field image to calculate absorption coefficient "
+	
 	"--coefficient-orientation" ,
-        type = int ,
-        default = 0 ,
-        help = "the orientation offset of the flat-field image to match the 3D model in degree. normally this is 0 degree" ,
-	    
+	type = int ,
+	default = 0 ,
+	help = "the orientation offset of the flat-field image to match the 3D model in degree. normally this is 0 degree" ,
+	
 	"--coefficient-viewing" ,
-        type = int ,
-        default = 0 ,
-        help = "the viewing angle of the 3D model to have the best region to determine absorption coefficient in degree" ,
-        
-        "--flat-field-name" ,
-        type = str ,
-        default=None,
-        help = "the flat-field image selected to determine the absorption coefficient, "
-               "when you use this flag, you should also fill the angle in coefficient_viewing"
-               "to allow the 3D model to rotate to match it"
-        
-        "--coefficient-thresholding" ,
-        type = str ,
-        default = None ,
-        help = "thresholding method to extract the region of interest"
-               "options are: 'triangle', 'li', 'mean,'minimum','otsu','yen','isodata'" ,
-        
-        "--full-reflection" ,
-        type = bool ,
-        default = False ,
-        help = "whether cutting some unwanted data of the reflection table"
-               "before calculating based dials.scale outlier removing algorithm" ,
-        
-        "--dials-dependancy" ,
-        type = str ,
-        help = "the path to execute dials package"
-               "e.g. module load dials"
-               "e.g. source /home/yishun/dials_develop_version/dials" ,
-        
-        "--model-storepath" ,
-        type = str ,
-        default = None ,
-        help = "the storepath of the 3D model built by other sources in .npy" ，
-        
-        "--coe_li" ,
-        type = float ,
-        Optional =True,
-        help = "pre-measured absorption coefficient for liquor, if this is given,"
-        " liquor will be fixed in this process " ,
-        
-        "--coe_cr" ,
-        type = float ,
-        Optional =True,
-        help = "pre-measured absorption coefficient for crystal, if this is given,"
-        " crystal will be fixed in this process " ,
-        
-        "--coe_lo" ,
-        type = float ,
-        Optional =True,
-        help = "pre-measured absorption coefficient for loop, if this is given,"
-        " loop will be fixed in this process " ,
+	type = int ,
+	default = 0 ,
+	help = "the viewing angle of the 3D model to have the best region to determine absorption coefficient in degree" ,
+	
+	"--flat-field-name" ,
+	type = str ,
+	default=None,
+	help = "the flat-field image selected to determine the absorption coefficient, "
+	"when you use this flag, you should also fill the angle in coefficient_viewing"
+	"to allow the 3D model to rotate to match it"
+	
+	"--coefficient-thresholding" ,
+	type = str ,
+	default = None ,
+	help = "thresholding method to extract the region of interest"
+	"options are: 'triangle', 'li', 'mean,'minimum','otsu','yen','isodata'" ,
+	
+	"--full-reflection" ,
+	type = bool ,
+	default = False ,
+	help = "whether cutting some unwanted data of the reflection table"
+	"before calculating based dials.scale outlier removing algorithm" ,
+	
+	"--dials-dependancy" ,
+	type = str ,
+	help = "the path to execute dials package"
+	"e.g. module load dials"
+	"e.g. source /home/yishun/dials_develop_version/dials" ,
+	
+	"--model-storepath" ,
+	type = str ,
+	default = None ,
+	help = "the storepath of the 3D model built by other sources in .npy" ,
+	
+	"--coe_li" ,
+	type = float ,
+	Optional =True,
+	help = "pre-measured absorption coefficient for liquor, if this is given,"
+	" liquor will be fixed in this process " ,
+	
+	"--coe_cr" ,
+	type = float ,
+	Optional =True,
+	help = "pre-measured absorption coefficient for crystal, if this is given,"
+	" crystal will be fixed in this process " ,
+	
+	"--coe_lo" ,
+	type = float ,
+	Optional =True,
+	help = "pre-measured absorption coefficient for loop, if this is given,"
+	" loop will be fixed in this process " ,
 
 
 
@@ -273,6 +273,7 @@ This command is used to calculate the absoprtion factors across different nodes 
 	type = str2bool,
 	default = True ,
 	help = "activate bisection method" ,
+	
 	"--full-iteration",
 	type=int,
 	default=0,
