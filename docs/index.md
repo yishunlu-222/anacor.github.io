@@ -15,33 +15,33 @@ This command is used to create 3D model, calculate absorption coefficient and pr
 ```anacor.preprocess --input-file "input flag file path" ```
 
 ### Parameters/Flags in the .yaml file
-		"--dataset" ,
-         type = str ,
-         help = "dataset reference number/name " ,
+	"--dataset" ,
+	type = str ,
+	help = "dataset reference number/name " ,
          
         "--store-dir" ,
-         type = str ,
-         default = "./" ,
-         help = "the store directory " ,
+	type = str ,
+	default = "./" ,
+	help = "the store directory " ,
           
-		"--segimg-path" ,
-         type = str ,
-         help = "the path of segmentation images" ,
+	"--segimg-path" ,
+	type = str ,
+	help = "the path of segmentation images" ,
          
-		"--rawimg-path" ,
-		 type = str ,
-		 default = None ,
-		 help = "the path of raw flat-field images" ,
+	"--rawimg-path" ,
+	type = str ,
+	default = None ,
+	help = "the path of raw flat-field images" ,
 		 
-		 "--refl-filename" ,  
-	    type = str ,  
-	    help = "the path of the reflection table" , 
+	"--refl-filename" ,  
+	type = str ,  
+	help = "the path of the reflection table" , 
 	    
-		"--expt-filename" ,
+	"--expt-filename" ,
         type = str ,
         help = "the path of the experimental file" ,
         
-	    "--create3D" ,
+	"--create3D" ,	
         type = bool ,
         default = True ,
         help = "whether the reconstruction slices need to be vertically filpped to match that in the real experiment" ,
@@ -99,8 +99,25 @@ This command is used to create 3D model, calculate absorption coefficient and pr
         "--model-storepath" ,
         type = str ,
         default = None ,
-        help = "the storepath of the 3D model built by other sources in .npy" ,
+        help = "the storepath of the 3D model built by other sources in .npy" ，
         
+        "--coe_li" ,
+        type = float ,
+        Optional =True,
+        help = "pre-measured absorption coefficient for liquor, if this is given,"
+        " liquor will be fixed in this process " ,
+        
+        "--coe_cr" ,
+        type = float ,
+        Optional =True,
+        help = "pre-measured absorption coefficient for crystal, if this is given,"
+        " crystal will be fixed in this process " ,
+        
+        "--coe_lo" ,
+        type = float ,
+        Optional =True,
+        help = "pre-measured absorption coefficient for loop, if this is given,"
+        " loop will be fixed in this process " ,
 
 
 
@@ -213,6 +230,24 @@ This command is used to calculate the absoprtion factors across different nodes 
         type = float ,
         default = 0 ,
         help = "the orientation offset" ,
+	
+	"--auto-sampling" ,
+        type = bool ,
+        default =True,
+        help = "automatically determine sampling number",
+        
+        "--full-iteration",
+        type=int,
+        default=0,
+        help="whether to do full iteration(break when encounter an air point)",
+        
+         "--pixel-size-x",
+
+        type=float,
+
+        default=0.3,
+
+        help="overall pixel size of tomography in x dimension",
 
 
 ### Example results on the store directory
