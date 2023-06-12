@@ -18,12 +18,12 @@ This command is used to create 3D model, calculate absorption coefficient and pr
 	"--dataset" ,
 	type = str ,
 	help = "dataset reference number/name " ,
-         
+	
         "--store-dir" ,
 	type = str ,
 	default = "./" ,
 	help = "the store directory " ,
-          
+	
 	"--segimg-path" ,
 	type = str ,
 	help = "the path of segmentation images" ,
@@ -241,13 +241,45 @@ This command is used to calculate the absoprtion factors across different nodes 
         default=0,
         help="whether to do full iteration(break when encounter an air point)",
         
-         "--pixel-size-x",
-
+		"--pixel-size-x",
         type=float,
-
         default=0.3,
-
         help="overall pixel size of tomography in x dimension",
+       
+       "--pixel-size-y",
+        type=float,
+        default=0.3,
+        help="overall pixel size of tomography in y dimension",
+        
+       "--pixel-size-z",
+        type=float,
+        default=0.3,
+        help="overall pixel size of tomography in z dimension
+		
+       "--by-c",
+        type=str2bool,
+        default=True,
+        help="calculate by c instead of python",
+        
+        "--slicing",
+        type=str,
+        default='z',
+        help="slicing sampling direction",
+        
+         "--num-workers",
+        type=int,
+        default=4,
+        help="number of workers",
+        
+        "--test-mode",
+        type=str2bool,
+        default=False,
+        help="test mode",
+
+        "--bisection" ,
+        type = str2bool,
+        default = True ,
+        help = "activate bisection method" ,
 
 
 ### Example results on the store directory
