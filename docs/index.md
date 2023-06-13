@@ -119,6 +119,11 @@ This command is used to create 3D model, calculate absorption coefficient and pr
 	help = "pre-measured absorption coefficient for loop, if this is given,"
 	" loop will be fixed in this process " ,
 
+	"--abs_base_cls" ,
+	type = str ,
+	default='li'
+	help = "the base class that X-ray only penetrate it and get to the detector "
+	" loop: 'lo', crystal:'cr' " ,
 
 
 ### Example results on the store directory
