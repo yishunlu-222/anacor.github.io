@@ -1,7 +1,7 @@
-![Flow chart](./docs/anacor_preprocess.jpg)
+![Flow chart](https://raw.githubusercontent.com/yishunlu-222/anacor.github.io/blob/main/docs/whole_process.jpg)
 
 ## anacor.init
-This command is used to create the initialization for the AnACor. This creates the following three default input files for the user to enter commands/flags to the commands. They contain the possible flags for the anacor.preprocess, anacor.mp. The users can use this template to create a new input files for the commands. **Now the postprocess is also included in the anacor.mp.**
+This command is used to create the initialization for the AnACor. This creates the following three default input files for the user to enter commands/flags to the commands. They contain the possible flags for the anacor.preprocess, anacor.mp. The users can use this template to create a new input file for the commands. **Now the postprocess is also included in the anacor.mp.**
 
 ```markdown
 ├── current_folder
@@ -11,8 +11,8 @@ This command is used to create the initialization for the AnACor. This creates t
 There are common options/parameters in the default yaml files, but you can add more based on the detailed documentation below. For example, you don't have GPU and want to use Bisection method, you need to have a row of "gpu: false" and an another row of "bisection: True" in the default_mpprocess_input.yaml.
 
 ## anacor.preprocess
-![anacor.preprocess](./docs/anacor_preprocess.jpg)
-This command is used to create 3D model, calculate absorption coefficient and preprocess data from dials (.expt and .refl).  To execute `anacor.preprocess` , the user can either change the flags/parameters in `default_preprocess_input.yaml`  or create a new one .yaml file, where the user needs to source the path like below:
+![anacor.preprocess](https://raw.githubusercontent.com/yishunlu-222/anacor.github.io/blob/main/docs/anacor_preprocess.jpg)
+This command is used to create a 3D model, calculate the absorption coefficient and preprocess data from dials (.expt and .refl).  To execute `anacor.preprocess` , the user can either change the flags/parameters in `default_preprocess_input.yaml`  or create a new one .yaml file, where the user needs to source the path like below:
 
 ```anacor.preprocess --input-file "input flag file path" ```
 
