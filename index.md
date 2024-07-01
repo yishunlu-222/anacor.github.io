@@ -1,7 +1,7 @@
 ![Flow chart](whole_process.jpg)
 
 ## anacor.init
-This command is used to create the initialization for the AnACor. This creates the following three default input files for the user to enter commands/flags to the commands. They contain the possible flags for the anacor.preprocess, anacor.mp. The users can use this template to create a new input file for the commands. **Now the postprocess is also included in the anacor.mp.**
+This command is used to create the initialization for the AnACor. This creates the following three default input files for the user to enter commands/flags to the commands. They contain the possible flags for the anacor.preprocess, anacor.mp. The users can use this template to create a new input file for the commands. **Now the postprocess is also included in the anacor.mp, but you can only run postprocess by `anacor.postprocess`**
 
 ```markdown
 ├── current_folder
