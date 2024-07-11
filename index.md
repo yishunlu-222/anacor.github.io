@@ -126,7 +126,7 @@ This command is used to create 3D model, calculate absorption coefficient and pr
 	default='li',
 	help="Base class to measure the linear absorption coefficient. "
 	     "This class should have an area where only X-rays penetrate this class. "
-	     "So the μ = \\(-\\frac{\\log(\\frac{I}{I_0})}{L}\\)"
+	     "So the μ = -log(I/I_0) / L"
 
 
 ### Example results on the store directory
