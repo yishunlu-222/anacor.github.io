@@ -82,7 +82,7 @@ This command is used to create 3D model, calculate absorption coefficient and pr
 	
 	"--coefficient-thresholding" ,
 	type = str ,
-	default = None ,
+	default = "otsu" ,
 	help = "thresholding method to extract the region of interest"
 	"options are: 'triangle', 'li', 'mean,'minimum','otsu','yen','isodata'" ,
 	
